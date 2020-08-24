@@ -17,6 +17,7 @@ program
     .arguments('<file>')
     .option('-s, --skip-compile', 'skip compilation')
     .option('-e, --env [path]', 'path to environment variables files [./.env]', './.env')
+    .option('-t, --tsconfig [path]', 'path to tsconfig file [./tsconfig.json]', './tsconfig.json')
     .option('-m, --mode <mode>', 'output mode [dev|build|replace]', /^(dev|build|replace)$/i)
     .action(function (file) {
         if (program.mode === 'dev') {
@@ -56,7 +57,12 @@ function compile(entry) {
                 {
                     test: /\.ts?$/,
                     exclude: new RegExp(commonExclude),
-                    use: 'ts-loader',
+                    use: {
+                        loader: 'ts-loader',
+                        options: {
+                            configFile: program.tsconfig,
+                        },
+                    },
                 },
                 {
                     test: /\.js$/,
