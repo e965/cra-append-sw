@@ -60,7 +60,7 @@ function compile(entry) {
                     use: {
                         loader: 'ts-loader',
                         options: {
-                            configFile: program.tsconfig,
+                            configFile: path.join(process.cwd(), program.tsconfig),
                         },
                     },
                 },
@@ -91,7 +91,7 @@ function compile(entry) {
         },
         plugins: [
             new Dotenv({
-                path: program.env,
+                path: path.join(process.cwd(), program.env),
                 safe: false,
                 silent: true,
                 systemvars: true,

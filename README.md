@@ -19,6 +19,7 @@ It allows to keep the default CRA configuration (no ejecting). It simply appends
     -s, --skip-compile      Skip compilation
     -h, --help              Output usage information
     -e, --env [path]        (./.env) Path to environment variables file
+    -t, --tsconfig [path]   (./tsconfig.json) Path to tsconfig file
     -m, --mode [mode]       Output mode
 
 #### Output modes
