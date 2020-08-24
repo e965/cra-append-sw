@@ -8,7 +8,7 @@ It allows to keep the default CRA configuration (no ejecting). It simply appends
 
 ## Installation
 
-    $ npm install @e965/cra-append-sw --save
+    $ npm install @cojam/cra-append-sw --save
 
 ## Usage
 
